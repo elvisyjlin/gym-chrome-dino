@@ -4,28 +4,28 @@
 # Copyright (C) 2018 Elvis Yu-Jing Lin <elvisyjlin@gmail.com>
 # Licensed under the MIT License - https://opensource.org/licenses/MIT
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(
     name='gym_chrome_dino', 
-    version='0.0.1', 
+    version='0.0.2', 
     author='Elvis Yu-Jing Lin', 
     author_email='elvisyjlin@gmail.com', 
     description='Chrome Dino in OpenAI Gym', 
     long_description=long_description, 
     long_description_content_type='text/markdown', 
     url='https://github.com/elvisyjlin/gym-chrome-dino', 
-    packages=setuptools.find_packages(), 
+    packages=find_packages(), 
     classifiers=[
         'Programming Language :: Python :: 3', 
         'License :: OSI Approved :: MIT License', 
         'Operating System :: OS Independent', 
     ], 
     install_requires=[
-        'bs4>=4.4.1', 
+        'beautifulsoup4>=4.4.1', 
         'gym>=0.10.8', 
         'lxml>=3.5.0', 
         'numpy>=1.15.3', 
