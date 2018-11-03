@@ -11,7 +11,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='gym_chrome_dino', 
-    version='0.0.2', 
+    version='0.0.3', 
     author='Elvis Yu-Jing Lin', 
     author_email='elvisyjlin@gmail.com', 
     description='Chrome Dino in OpenAI Gym', 

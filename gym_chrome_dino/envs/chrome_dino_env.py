@@ -31,6 +31,7 @@ class ChromeDinoEnv(gym.Env):
         self.gametime_reward = 0.1
         self.gameover_penalty = -1
         self.current_frame = self.observation_space.low
+        self._action_set = [0, 1, 2]
     
     def _observe(self):
         s = self.game.get_canvas()
@@ -46,6 +47,8 @@ class ChromeDinoEnv(gym.Env):
             self.game.press_up()
         if action == 2:
             self.game.press_down()
+        if action == 3:
+            self.game.press_space()
         observation = self._observe()
         reward = self.gametime_reward
         done = False
@@ -74,3 +77,13 @@ class ChromeDinoEnv(gym.Env):
             self.game.restore_parameter('config.ACCELERATION')
         else:
             self.game.set_parameter('config.ACCELERATION', 0)
+    
+    def get_action_meanings(self):
+        return [ACTION_MEANING[i] for i in self._action_set]
+
+ACTION_MEANING = {
+    0 : "NOOP",
+    1 : "UP",
+    2 : "DOWN",
+    3 : "SPACE",
+}
