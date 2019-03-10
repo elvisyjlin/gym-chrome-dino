@@ -2,6 +2,8 @@
 
 An OpenAI Gym environment for Chrome Dino / T-Rex Runner Game
 
+![screenshot](https://user-images.githubusercontent.com/10172439/54082936-eda8f700-4357-11e9-9b86-662962c334e9.jpg)
+
 This environment utilizes 
 [a forked version](https://github.com/elvisyjlin/t-rex-runner) 
 of _Chrome Dino_, also called _T-Rex Runner_, 
