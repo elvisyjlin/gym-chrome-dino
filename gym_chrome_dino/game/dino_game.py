@@ -8,6 +8,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
 from gym_chrome_dino.utils.helpers import download_chromedriver
 
@@ -51,16 +52,16 @@ class DinoGame():
     
     def is_playing(self):
         return self.driver.execute_script('return Runner.instance_.playing;')
-    
+
     def press_space(self):
-        return self.driver.find_element_by_tag_name('body').send_keys(Keys.SPACE)
-    
+        return self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.SPACE)
+
     def press_up(self):
-        return self.driver.find_element_by_tag_name('body').send_keys(Keys.UP)
-    
+        return self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.UP)
+
     def press_down(self):
-        return self.driver.find_element_by_tag_name('body').send_keys(Keys.DOWN)
-    
+        return self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.DOWN)
+
     def pause(self):
         return self.driver.execute_script('Runner.instance_.stop();')
     
