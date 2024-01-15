@@ -13,8 +13,9 @@ from gym_chrome_dino.utils.helpers import download_chromedriver
 
 class DinoGame():
     def __init__(self, render=False, accelerate=False, autoscale=False):
-        if not os.path.exists('chromedriver') and not os.path.exists('chromedriver.exe'):
-            download_chromedriver()
+        # if not os.path.exists('chromedriver') and not os.path.exists('chromedriver.exe'):
+        #     download_chromedriver()
+        # Selenium handles the above now
         chromedriver_path = './chromedriver'
         options = Options()
         options.add_argument('--disable-infobars')
@@ -23,7 +24,8 @@ class DinoGame():
         options.add_argument('--window-size=800,600')
         if not render:
             options.add_argument('--headless')
-        self.driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+        # self.driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+        self.driver = webdriver.Chrome(options=options)
         # self.driver.get('chrome://dino')
         self.driver.get('https://elvisyjlin.github.io/t-rex-runner/')
         self.defaults = self.get_parameters()  # default parameters
